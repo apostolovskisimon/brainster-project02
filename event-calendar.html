@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Calendar</title>
+  <link rel="shortcut icon" href="Assets/Images/favicon.ico" />
+  <link rel="stylesheet" href="Assets/CSS/reset.css" />
+  <link rel="stylesheet" href="Assets/CSS/neccesaries.css">
+  <link rel="stylesheet" href="Assets/CSS/events.css" />
+  <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d45f1a3160.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navigation">
+      <div class="nav">
+        <a href="brainster-space.html" class="logo">
+          <img src="Assets/Images/brainster_space_logo.svg" alt="Brainster Logo" />
+        </a>
+        <div class="link-container">
+          <a href="#" class="myLink" id="spaceBlog"> SPACE БЛОГ</a>
+          <a href="event-calendar.html" class="active-link"> НАСТАНИ</a>
+          <a href="brainster-space.html#reservation" class="myLink"> CO-WORKING</a>
+          <a href="academies.html" class="myLink"> АКАДЕМИИ</a>
+          <a href="event-space.html" class="myLink"> ПРОСТОР ЗА НАСТАНИ</a>
+          <a href="#" class="myLink" id="partners"> ПАРТНЕРСТВА</a>
+        </div>
+        <button class="signup" id="modal-btn">+ ПРИКЛУЧИ СЕ</button>
+        <div class="ham">
+        </div>
+        <button class="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="nav-filter">
+      <div class="filter">
+        <ul>
+          <li class="filter-header">ФИЛТРИРАЈ</li>
+
+          <a href="space-blog.html" id="all">
+            СИТЕ
+          </a>
+          <a href="space-blog.html#Career" id="career">
+            КАРИЕРА
+          </a>
+          <a href="space-blog.html#Technology" id="tech">
+            ТЕХНОЛОГИЈА
+          </a>
+          <a href="space-blog.html#DataScience" id="data">
+            DATA SCIENCE
+          </a>
+          <a href="space-blog.html#Marketing" id="marketing">
+            МАРКЕТИНГ
+          </a>
+          <a href="space-blog.html#Design" id="design">
+            ДИЗАЈН
+          </a>
+          <a href="space-blog.html#Impact" id="impact">
+            IMPACT
+          </a>
+          <a href="space-blog.html#SpaceFamily" id="spaceFamily">
+            #SPACE FAMILY
+          </a>
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="hamburger-content">
+      <div class="hamburger-container">
+        <a href="space-blog.html" class="myLink"> SPACE БЛОГ</a>
+        <a href="event-calendar.html" class="myLink active-link"> НАСТАНИ</a>
+        <a href="brainster-space.html#reservation" class="myLink"> CO-WORKING</a>
+        <a href="academies.html" class="myLink"> АКАДЕМИИ</a>
+        <a href="event-space.html" class="myLink"> ПРОСТОР ЗА НАСТАНИ</a>
+        <a href="#" class="myLink" id="partnerPhone"> ПАРТНЕРСТВА</a>
+        <button class="signup signupPhone signupBtnTablet">+ ПРИКЛУЧИ СЕ</button>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="modal">
+    <div class="modal-content-partner" id="firstModal">
+      <form class="modal-form">
+        <div class="modal-header">
+          <h3>Приклучи се</h3>
+          <span class="close-btn" id="close-btn-sm"><i class="far fa-times-circle"></i></span>
+        </div>
+        <div class="label-error">
+          <label for="name">Име и презиме (задолжително):</label>
+          <p class="error-name errorLabel" id="sm-error-name">Внесете Име и Презиме</span>
+        </div>
+        <input type="text" name="fullname" id="name" required placeholder="Внесете Име и Презиме"><br>
+        <div class="label-error">
+          <label for="email">Е-Маил (задолжителен):</label>
+          <p class="error-email errorLabel" id="sm-error-email">Внесете Е-Маил</span>
+        </div>
+        <input type="email" name="email" id="email" required placeholder="Внесете го вашиот Е-Маил">
+        <button type="submit" class="signupBtns submitBtns" id="signUp">Приклучи се</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-partner">
+    <div class="modal-content-partner">
+      <div class="modal-header-partner">
+        <span class="close-btn" id="close-btn-part"><i class="far fa-times-circle"></i></span>
+        <h3>Приклучи се</h3>
+      </div>
+      <form class="modal-form-partner">
+        <div class="label-error">
+          <label for="name">Име и презиме (задолжително):</label> <br>
+          <p class="error-name errorLabel" id="xl-error-name">Внесете Име и Презиме</span>
+        </div>
+        <input type="text" name="fullName" id="userFullName" required placeholder="Внесете Име и Презиме"><br> <br>
+        <label for="company">Име на компанија (незадолжително)</label> <br>
+        <input type="text" name="companyName" id="company" placeholder="Внесете име на Вашата Компанија"> <br><br>
+        <div class="label-error">
+          <label for="phone">Телефонски број (задолжително)</label> <br>
+          <p class="error-phone errorLabel" id="xl-error-phone">Внесете Име и Презиме</span>
+        </div>
+        <input type="text" name="phone" id="phone" required placeholder="Внесете Телефонски Број"> <br><br>
+        <label for="textarea">Предлог за Соработка (незадолжително)</label>
+        <span class="counter">300</span>
+        <textarea name="comment" maxlength="300"
+          placeholder="Во 300 карактери, опишете зошто сакате да соработуваме"></textarea> <br>
+        <button type="submit" class="signupBtns submitBtns" id="signUp-partner">Приклучи се</button>
+        <button class="close-form">Исклучи</button>
+      </form>
+    </div>
+  </div>
+
+  <main>
+    <div class="calendar-main">
+      <div id="calendar">
+        <div class="claendar-controls">
+          <h2>Календар</h2>
+          <div class="controls">
+            <i id="prevBtn" class="far fa-arrow-alt-circle-left"></i>
+            <div id="montyAndYear">Mart 2020</div>
+            <i id="nextBtn" class="far fa-arrow-alt-circle-right"></i>
+          </div>
+        </div>
+        <div class="calendar-header">
+          <div class="header-cell">Нед</div>
+          <div class="header-cell">Пон</div>
+          <div class="header-cell">Вто</div>
+          <div class="header-cell">Сре</div>
+          <div class="header-cell">Чет</div>
+          <div class="header-cell">Пет</div>
+          <div class="header-cell">Саб</div>
+        </div>
+        <div id="calendar-body">
+        </div>
+      </div>
+    </div>
+    <div class="events">
+      <h3>Следни Настани</h3>
+      <div class="event-holder">
+        <div class="events-left">
+        </div>
+        <div class="events-right">
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="contact">
+      <div class="contact-wrapper">
+        <div class="links">
+          <div class='helpers'>
+            <h5 id="useful-links">Корисни Линкови</h5>
+            <div class="popup" id="popUp">
+              <div class="popup-content">
+                <div class="popup-header">
+                  <h3>Контакт</h3>
+                  <span class="close-btn"><i class="far fa-times-circle"></i></span>
+                </div>
+                <p>Е-Маил: </p>
+                <a href="mailto:anja@brainster.co" target="_top" class="link-email">anja@brainster.co</a><br>
+                <p>
+                  Телефон:
+                  <p class="number">070 233 414</p>
+                  <button class="close-form close-popup">Затвори</button>
+              </div>
+            </div>
+            <a href="#" id="contact-click" class="contact-popup">Контакт</a>
+            <div class="moveDown">
+              <a href="https://www.wearelaika.com/" target="_blank">Отворени Позиции</a>
+              <a href="https://medium.com/wearelaika/brainster-space-the-new-home-of-the-local-tech-community-in-skopje-ffe97b564152"
+                target="_blank">Галерија</a>
+              <a href="event-calendar.html" target="_blank">Календар</a>
+            </div>
+
+          </div>
+          <div class="contact-wrap">
+            <h5>Социјални Мрежи</h5>
+            <div class="social-links">
+              <a href="https://www.facebook.com/brainster.co/" target="_block"><i
+                  class="fab fa-facebook-square fb"></i></a>
+              <a href="https://www.linkedin.com/school/brainster-co/" target="_blank"><i
+                  class="fab fa-linkedin ln"></i></a>
+              <a href="https://www.instagram.com/brainsterco/" target="_blank"><i
+                  class="fab fa-instagram-square in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <a href="brainster-space.html" class="logo-contact" >
+          <img src="Assets/Images/brainster_space_logo.svg" alt="Brainster Logo" />
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>COPYRIGHT &copy; BrainsterSpace. All Rights Reserved</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="Assets/JS/container.js"></script>
+  <script src="Assets/JS/main.js"></script>
+  <script src="Assets/JS/calendar.js"></script>
+</body>
+
+</html>
