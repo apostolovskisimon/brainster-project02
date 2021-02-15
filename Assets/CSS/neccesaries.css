@@ -1,0 +1,892 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+a {
+  text-decoration: none;
+}
+
+button {
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.myLink {
+  margin-left: 40px;
+  font-size: 1.125rem;
+  color: black;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.myLink::after {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  width: 0;
+  height: 3px;
+  background: #fcd232;
+  transition: linear 0.2s;
+}
+
+.myLink:hover::after {
+  width: 100%;
+}
+
+.active-link {
+  margin-left: 40px;
+  font-size: 1.125rem;
+  color: black;
+  font-weight: bold;
+  padding-bottom: 5px;
+  display: inline-block;
+  border-bottom: 3px solid #fcd232;
+}
+
+.navigation {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 130px;
+  border: none;
+  border-radius: 0;
+  position: relative;
+  background-color: white;
+}
+
+.nav {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+  margin-left: 40px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.link-container {
+  margin-top: 20px;
+  width: 87%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.signup {
+  background-color: black;
+  color: #fcd232;
+  padding: 10px 20px;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  position: absolute;
+  right: 5.2%;
+  margin-top: 5px;
+  margin-right: 7px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.signup:hover {
+  -webkit-box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+  -moz-box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+  box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+}
+
+.nav-filter {
+  display: none;
+}
+
+.filter {
+  margin-left: 135px;
+  width: fit-content;
+  padding: 20px;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.filter ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter li,
+.filter a {
+  margin-right: 30px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding-bottom: 3px;
+  color: #4d4d4d;
+  border-bottom: 2px solid transparent;
+}
+
+.filter a:hover {
+  border-bottom: 2px solid #fcd232;
+  cursor: pointer;
+}
+
+.filter li:first-child:hover {
+  cursor: default;
+  border-bottom: 2px solid transparent;
+}
+
+.filter li:first-child {
+  color: black;
+  border-bottom: 2px solid transparent;
+}
+
+.modal,
+.modal-partner, .modalCollab, .modalInnovation {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  padding-top: 250px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  float: right;
+  color: black;
+  font-size: 2.125rem;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+  color: #fcd232;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  height: 30px;
+  font-size: 0.875rem;
+}
+
+.modal-form {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 330px;
+  width: 90%;
+}
+
+.signupBtns{
+  color: #fcd232;
+  background-color: black;
+  height: 40px;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s ease-in-out;
+
+}
+
+#signUp:hover {
+  -webkit-box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+  -moz-box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+  box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+}
+.modal-header {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.modal-header h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bolder;
+  font-size: 0.875rem;
+}
+
+::placeholder {
+  font-size: 0.875rem;
+  font-style: italic;
+  text-indent: 10px;
+}
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.label-error {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.errorLabel {
+  color: red;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: none;
+}
+
+.modal-content-partner, .modal-content-card {
+  position: relative;
+  background-color: white;
+  padding: 30px;
+  margin: auto;
+  width: 30%;
+  height: 60%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 5px;
+}
+
+.smaller-modal {
+  height: 35%;
+  width: 25%;
+}
+
+.modal-content-partner input,  .modal-content-card input {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.modal-form-partner, .modal-form-card  {
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+textarea {
+  width: 100%;
+  height: 125px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  resize: none;
+  margin-top: 12px;
+  font-size: 0.875rem;
+}
+
+.counter {
+  float: right;
+  font-size: 0.75rem;
+  font-weight: bolder;
+}
+
+.submitBtns {
+  color: #fcd232;
+  background-color: black;
+  height: 40px;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  float: right;
+  margin-top: 20px;
+  margin-right: -6px;
+  transition: 0.3s ease-in-out;
+  font-size: 1rem;
+}
+
+.submitBtns:hover {
+  -webkit-box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+  -moz-box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+  box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+}
+
+.close-form{
+  box-shadow: none;
+  margin-top: 20px;
+  float: right;
+  color: black;
+  background-color: transparent;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: 0.3s ease-in-out;
+  font-size: 1rem;
+}
+
+.close-form:hover {
+  border: 1px solid black;
+  -webkit-box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+  -moz-box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+  box-shadow: 0px 0px 20px 4px rgba(252, 210, 50, 1);
+  cursor: pointer;
+}
+
+
+.modal-header-partner h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.contact {
+  display: flex;
+  height: 250px;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background-color: #f5f5f5;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.contact-wrapper {
+  width: 90%;
+  margin: 0 auto !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  flex-flow: row;
+  margin-left: 40px;
+}
+
+.helpers {
+  display: flex;
+  flex-direction: column;
+}
+
+.links h5,
+.contact-wrap h5 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+}
+.links a {
+  color: black;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.links .link-email {
+  color: black;
+  border-bottom: 1px solid blue;
+  width: fit-content;
+  margin: 0;
+}
+
+
+.number {
+  margin: 0;
+}
+.moveDown a {
+  color: black;
+}
+
+.contact-wrap {
+  margin-left: 80px;
+}
+
+.social-links .fab {
+  font-size: 2.25rem;
+  transition: 0.3s ease-in-out;
+}
+
+.social-links a {
+  margin-right: 20px;
+}
+
+.fb {
+  color: #3b5998;
+}
+
+.ln {
+  color: #0e76a8;
+}
+
+.in {
+  color: #c13584;
+}
+
+.social-links .fab:hover {
+  transform: scale(1.25);
+}
+
+.logo-contact {
+  height: 120px;
+  width: 120px;
+  margin-right: 8px;
+}
+
+.logo-contact img {
+  height: 100%;
+  width: 100%;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 15px;
+  background-color: #e7e7e7;
+}
+
+.signupTablet {
+  display: none;
+}
+
+.card-link {
+  color: black;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger-content {
+  display: none;
+}
+
+.ham {
+  display: none;
+}
+
+
+.moveDown {
+  display: flex;
+  flex-direction: column;
+}
+
+.moveDown a {
+  width: fit-content;
+  border-bottom: 3px solid transparent;
+}
+
+.moveDown a:hover {
+  border-bottom: 3px solid #fcd232;
+}
+
+.signupTablet {
+  display: none;
+}
+
+.card-link {
+  color: black;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger-content {
+  display: none;
+}
+
+.ham {
+  display: none;
+}
+
+.close {
+  float: right;
+}
+
+#firstModal {
+  height: 35%;
+}
+
+.popup {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    padding-top: 640px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-header {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.popup-content {
+  position: relative;
+  background-color: white;
+  padding: 30px;
+  margin: auto;
+  width: 12%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius: 5px;
+  font-size: 1.125rem;
+}
+
+.popup h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.close-popup {
+  background-color: black;
+  color: #fcd232;
+  display: block;
+  text-align: center;
+  padding: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.contact-popup {
+  width: fit-content;
+  border-bottom: 3px solid transparent;
+}
+.contact-popup:hover {
+  border-bottom: 3px solid #fcd232;
+}
+
+@media only screen and (max-width: 1520px) {
+  .link-container {
+    margin-right: 130px;
+  }
+
+  .myLink:last-child {
+    margin-right: 50px;
+  }
+
+  .myLink {
+    /* width: 100%; */
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1190px) {
+  .myLink {
+    font-size: 1rem;
+    margin-left: 18px;
+  }
+
+  .signup {
+    padding: 10px 5px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .signup {
+    bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .nav {
+    width: 100%;
+  }
+  .link-container {
+    display: none;
+  }
+
+  .signup {
+    bottom: 31%;
+    right: 13%;
+    padding: 13px 20px;
+  }
+
+  .hamburger {
+    display: block;
+    margin-right: 25px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 8px;
+  }
+
+  .popup {
+    padding-top: 557px;
+  }
+
+  .popup-content {
+    height: 22%;
+    width: 30%;
+  }
+
+  .hamburger .fas {
+    color: #fcd232;
+    padding: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 1.625rem;
+    width: 20px;
+  }
+  .navigation {
+    display: flex;
+  }
+
+  .ham {
+    display: block;
+    float: right;
+    margin-top: 40px;
+  }
+
+  .hamburger-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 390px;
+  }
+
+  .hamburger-container .myLink {
+    font-size: 1.125rem;
+  }
+
+  .myLink {
+    color: white;
+    margin-top: 30px;
+    letter-spacing: 2px;
+  }
+
+  .myLink:first-child {
+    margin-top: 20px;
+  }
+  .modal-header {
+    width: 100%;
+    margin: 30px auto;
+  }
+  .modal-content, .modal-content-card {
+    width: 40%;
+    height: 35%;
+  }
+
+  .modal-content-partner, .modal-content-card {
+    width: 55%;
+    height: 63%;
+  }
+
+  .modal-form-partner {
+    margin-top: 25px;
+  }
+
+  .modal-partner {
+    padding-top: 120px;
+  }
+
+  .contact-wrapper {
+    width: 94%;
+  }
+
+  .links {
+    margin-left: 0;
+  }
+
+  .footer-bottom {
+    font-size: 0.875rem;
+  }
+
+
+  .signupBtnTablet {
+    display: none;
+  }
+
+  .myLink {
+    margin-left: 0;
+  }
+
+  .smaller-modal {
+    width: 50%;
+  }
+
+  .logo {
+    margin-left: 20px;
+  }
+
+  .logo-contact {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .signup {
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .signup {
+    display: none;
+    position: static;
+  }
+
+  .signupPhone {
+    display: block;
+    color: black;
+    background-color: #fcd232;
+    font-weight: bold;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .ham {
+    display: block;
+  }
+
+  
+  .popup {
+    padding-top: 500px;
+  }
+
+  .popup-content {
+    height: 24%;
+    width: 65%;
+  }
+
+  .hamburger-container {
+    height: 480px;
+  }
+
+  .hamburger {
+    margin-right: 20px;
+  }
+
+  .counter {
+    margin-top: 5px;
+  }
+
+  .myLink {
+    margin-left: 0;
+    width: fit-content;
+  }
+
+  .myLink:first-child {
+    margin-top: 10px;
+  }
+
+  .modal-content-partner {
+    width: 80%;
+  }
+
+  label {
+    font-size: 0.75rem;
+  }
+
+  .errorLabel {
+    font-size: 0.625rem;
+  }
+  
+  .contact {
+    height: 480px;
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .contact-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .links {
+    flex-direction: column;
+  }
+
+  .logo-contact {
+    padding: 30px 0;
+    height: 80px;
+    width: 80px;
+  }
+
+  .helpers {
+    margin-top: 30px;
+  }
+
+  .contact-wrap {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+
+  .links {
+    margin-top: 0px;
+  }
+
+  .social {
+    position: absolute;
+    top: 77%;
+    margin: 0;
+    padding: 0;
+    left: 4%;
+  }
+
+  .modal-header {
+    width: 100%;
+    margin: 20px auto;
+  }
+  .modal-content {
+    width: 90%;
+    height: 35%;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  input {
+    width: 100%;
+  }
+}

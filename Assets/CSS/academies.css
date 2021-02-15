@@ -1,0 +1,220 @@
+.academies-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.academy {
+  width: 28%;
+  margin-left: 40px;
+}
+
+.academy h2 {
+  font-weight: bolder;
+  font-size: 3.25rem;
+  margin-bottom: 30px;
+}
+
+.academy p {
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+
+.academy-pic {
+  background-image: url(../Images/Nastani/1.jpg);
+  width: 65%;
+  height: 650px;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+  position: relative;
+  margin-right: 12px;
+}
+
+.academy-cards-main {
+  width: 95%;
+  margin-left: 60px;
+}
+
+ul,
+ul li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.academy-card {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 100px auto;
+}
+
+.card-1 {
+  background: url(https://brainster.co/storage/academy_1574434268.jpg) center
+    center / cover;
+}
+.card-2 {
+  background: url(https://brainster.co/storage/academy_1574507099.png) center
+    center / cover;
+}
+.card-3 {
+  background: url(https://brainster.co/storage/academy_1574507399.png) center
+    center / cover;
+}
+.card-4 {
+  background: url(https://brainster.co/storage/academy_1574507592.png) center
+    center / cover;
+}
+.card-5 {
+  background-image: url(../Images/Za_Nas/IMG_7707.jpg);
+}
+.card-6 {
+  background: url(https://brainster.co/storage/academy_1574507930.png) center
+    center / cover;
+}
+
+.card {
+  height: 460px;
+  width: 28%;
+  position: relative;
+  background-size: cover;
+  background-attachment: scroll;
+  border-radius: 10px;
+  margin-bottom: 70px;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(rgba(48, 47, 56, 0.5), rgba(48, 47, 56, 0.86));
+}
+.card-5::after {
+  background: linear-gradient(#3f4663, #30303c);
+  opacity: 0.85;
+}
+
+.layer > h3 {
+  position: absolute;
+  top: 6%;
+  left: 6%;
+  color: white;
+  font-size: 2.25rem;
+  width: 70%;
+  font-weight: bold;
+  z-index: 1;
+  line-height: 1.2;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 6%;
+  left: 6%;
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info > span {
+  font-size: 1.125rem;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+@media only screen and (max-width: 769px) {
+
+  .academies-header {
+    flex-direction: column;
+    width: 94%;
+  }
+
+  .academy {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+  
+  .academy-pic {
+    width: 100%;
+    background-position: center;
+    height: 500px;
+    margin-right: 0;
+  }
+
+
+  .academy-cards-main {
+      width: 96%;
+      margin-left: 0;
+      margin: 0 auto;
+  }
+ 
+  .academy-card {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .card {
+    width: 47%;
+    height: 350px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .card h3 {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+  }
+
+  .card-info span {
+    font-size: 0.9375rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .academies-header {
+    width: 90%;
+  }
+  .academy h2 {
+    font-size: 2rem;
+  }
+
+  .academy p {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .academy-pic {
+    height: 300px;
+  }
+
+  .card {
+    width: 95%;
+  }
+
+  .academy-card {
+    margin-top: 50px;
+  }
+ 
+}
